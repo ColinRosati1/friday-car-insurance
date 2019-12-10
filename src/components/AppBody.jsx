@@ -3,7 +3,8 @@ import '../styles/AppBody.css';
 
 import CarItem from './CarItem'
 
-import { updateDatabase, carDatabaseApiRequest, carMakesApiRequest, showErrorDatabase } from '../actions/database-action'
+import { updateDatabase, carDatabaseApiRequest, showErrorDatabase } from '../actions/database-action'
+import { carMakesApiRequest } from '../actions/makes-action'
 import { connect } from 'react-redux'
 
 export class AppBody extends Component {
@@ -29,7 +30,7 @@ export class AppBody extends Component {
     const _make = event.target.value
     await this.setState({select_make:_make})
     console.log(_make)
-    // await this.props.onMakesApiRequest(_make)
+    await this.props.onMakesApiRequest(_make)
   }
   
   render() {
