@@ -12,7 +12,7 @@ export function updateDatabase(newCar) {
     }
 }
 
-export function showErrorData() {
+export function showErrorDatabase() {
     return {
         type: SHOW_CAR_API_REQUEST_ERROR,
         payload: {
