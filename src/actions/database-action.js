@@ -1,5 +1,5 @@
-export const UPDATE_CAR_API_REQUEST = 'history:updateDatabase'
-export const SHOW_CAR_API_REQUEST_ERROR = 'historyr:showErrorDatabase'
+export const UPDATE_CAR_API_REQUEST = 'car_data:updateDatabase'
+export const SHOW_CAR_API_REQUEST_ERROR = 'car_data:showErrorDatabase'
 
 
 export function updateDatabase(newCar) {
@@ -7,7 +7,7 @@ export function updateDatabase(newCar) {
     return {
         type: UPDATE_CAR_API_REQUEST,
         payload: {
-            history: newCar
+            car_data: newCar
         },
     }
 }
@@ -16,7 +16,7 @@ export function showErrorDatabase() {
     return {
         type: SHOW_CAR_API_REQUEST_ERROR,
         payload: {
-            history: 'ERROR!!'
+            car_data: 'ERROR!!'
         }
     }
 }

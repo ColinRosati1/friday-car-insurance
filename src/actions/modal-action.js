@@ -19,7 +19,7 @@ export const hideModal = () => dispatch => {
 
 export function revealCarModal(revealCar) {
     return {
-        type: REVEAL_Car_MODAL,
+        type: REVEAL_CAR_MODAL,
         payload: {
             select_car: revealCar
         }

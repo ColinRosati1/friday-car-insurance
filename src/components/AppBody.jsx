@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/AppBody.css';
+// import '../styles/AppBody.css';
 
 import CarItem from './CarItem'
 
@@ -11,14 +11,14 @@ export class AppBody extends Component {
     super(props)
   
     this.state = {
-       reveal_history: false
+       reveal_database: false
     }
 
     this.handleClick = this.handleClick.bind(this)
   }
 
   async handleClick(){
-    await this.props.onHistoryApiRequest()
+    await this.props.onDatabaseApiRequest()
     .then( () => this.setState({reveal_history:true}))
     
   }
@@ -26,20 +26,21 @@ export class AppBody extends Component {
   render() {
     let carData = this.props.car_data
     let carItems = []
+    console.log(this.props)
     
     return (
       <div className="app-body" onClick={this.handleClick}>
       <header className="app-body-header">
-        History
+        Car Data
       </header>
       {
-        (this.state.reveal_history === false
+        (this.state.reveal_database === false
           ?
             <div> Search Cars </div>
           :
-            CarItems = car.map( res => {
+            carItems = carData.map( res => {
                 console.log("cars", res)
-              return <CarItem title={"title"} details={"details"} />
+              return <CarItem make={"make"} model={"model"} enginePowerPS={"enginePowerPS"} enginePowerPW={"enginePowerPW"} fuelType={"fuelType"} bodyType={"bodyType"} engineCapacity={"engineCapacity"} />
             })
         )
       }

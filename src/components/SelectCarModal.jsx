@@ -77,7 +77,7 @@ class SelectCarModal extends React.Component {
   render() {
    let car = ''
    if(this.props.select_car[0]){
-     mission = this.props.select_car[0];
+     car = this.props.select_car[0];
    }
     return (
       <div>

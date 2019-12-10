@@ -30,5 +30,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "keymirror": "^0.1.1",
+    "react-modal": "^3.11.1"
   }
 }

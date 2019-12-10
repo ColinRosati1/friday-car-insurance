@@ -1,6 +1,5 @@
 import React from 'react';
-import '../styles/AppBody.css';
-
+// import '../styles/AppBody.css';
 
 /**
  *
@@ -15,7 +14,7 @@ import '../styles/AppBody.css';
  * 
  */
 function CarItem(props) {
-  const {title, details} = props
+  const {make, model, enginePowerPS, enginePowerPW, fuelType, bodyType, engineCapacity} = props
   return (
     <div className="car-item">
       <div className="car-item-make">{make}</div>
