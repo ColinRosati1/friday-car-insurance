@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Body.css';
+import '../styles/AppBody.css';
 
 import CarItem from './CarItem'
 
@@ -39,7 +39,7 @@ export class AppBody extends Component {
           :
             CarItems = car.map( res => {
                 console.log("cars", res)
-              return <CarItem/>
+              return <CarItem title={"title"} details={"details"} />
             })
         )
       }
