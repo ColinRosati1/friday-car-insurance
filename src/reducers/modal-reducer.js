@@ -1,6 +1,5 @@
-import { REVEAL_CAR_MODAL, MODAL_ERROR } from '../actions/modal-action'
+import { SHOW_MODAL, HIDE_MODAL } from '../actions/modal-action'
 import ActionTypes from '../actions/action-types'
-
 
 const initialState = {
     modalType: null,
@@ -9,7 +8,7 @@ const initialState = {
     }
 }
 
-export const modalActionReducer = (state = initialState, action) => {
+export function modalReducer(state = initialState, action) {
     switch (action.type) {
         case ActionTypes.SHOW_MODAL:
             return {
@@ -21,16 +20,5 @@ export const modalActionReducer = (state = initialState, action) => {
             return initialState
         default:
             return state
-    }
-}
-
-export default function modalReducer(state = '', { type, payload }) {
-    switch (type) {
-        case REVEAL_CAR_MODAL:
-            return payload.select_car;
-        case MODAL_ERROR:
-            return payload.select_car;
-        default:
-            return state;
     }
 }

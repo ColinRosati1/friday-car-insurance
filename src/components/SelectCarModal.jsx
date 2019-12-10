@@ -53,7 +53,7 @@ class SelectCarModal extends React.Component {
   componentWillReceiveProps(nextProps){
     if(nextProps.select_car!==this.props.select_car){
       console.log("new car props")
-      this.openModal()
+      // this.openModal()
     }
   }
 
@@ -76,9 +76,9 @@ class SelectCarModal extends React.Component {
 
   render() {
    let car = ''
-   if(this.props.select_car[0]){
-     car = this.props.select_car[0];
-   }
+  //  if(this.props.select_car[0]){
+  //    car = this.props.select_car[0];
+  //  }
     return (
       <div>
         <Modal

@@ -1,36 +1,40 @@
-import ActionTypes from './action-types'
+export const SHOW_MODAL_API_REQUEST_ERROR = 'select_make:showErrorDatabase'
+export const SHOW_MODAL = 'select_make:updateCarMake'
 
-export const REVEAL_CAR_MODAL = 'select_car:revealCarModal'
-export const MODAL_ERROR = 'select_car:modalError'
-
-export const showModal = ({ modalProps, modalType }) => dispatch => {
-    dispatch({
-        type: ActionTypes.SHOW_MODAL,
-        modalProps,
-        modalType
-    })
-}
-
-export const hideModal = () => dispatch => {
-    dispatch({
-        type: ActionTypes.HIDE_MODAL
-    })
-}
-
-export function revealCarModal(revealCar) {
+export function updateCarMake(newVehicle) {
+    console.log("updateCarMAke action", newVehicle)
     return {
-        type: REVEAL_CAR_MODAL,
+        type: SHOW_MODAL,
         payload: {
-            select_car: revealCar
+            select_vehicle: newVehicle
         }
     }
 }
 
-export function modalError() {
+export function revealCarModal() {}
+
+export function showErrorModal() {
     return {
-        type: MODAL_ERROR,
+        type: SHOW_MODAL_API_REQUEST_ERROR,
         payload: {
-            select_car: 'ERROR!!'
+            select_vehicle: 'ERROR!!'
         }
+    }
+}
+
+// API selected make vehicle call
+export function carVehicleApiRequest(sel_vehicle) {
+    console.log("car make api")
+    return dispatch => {
+        console.log("sel make", sel_vehicle)
+        return fetch('http://localhost:8080/api/models?vehicle=' + sel_vehicle)
+            .then(response => response.json())
+            .then(response => {
+                dispatch(updateCarMake(response))
+            })
+            .catch(err => {
+                console.log("API ERROR")
+                    // dispatch(showErrorDatabase())
+            })
     }
 }

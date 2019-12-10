@@ -3,6 +3,7 @@ import '../styles/AppBody.css';
 
 import { updateDatabase, carDatabaseApiRequest, showErrorDatabase } from '../actions/database-action'
 import { carMakesApiRequest } from '../actions/makes-action'
+import { vehicleApiRequest } from '../actions/vehicle-action'
 import { connect } from 'react-redux'
 
 export class Form extends Component {
@@ -15,6 +16,7 @@ export class Form extends Component {
 
     this.handleClick = this.handleClick.bind(this)
     this.handleSelectMakeForm = this.handleSelectMakeForm.bind(this)
+    this.handleSelectVehicleForm = this.handleSelectVehicleForm.bind(this)
   }
 
   async handleClick(){
@@ -34,7 +36,13 @@ export class Form extends Component {
     const _model = event.target.value
     await this.setState({select_model:_model})
     console.log(_model)
-    // await this.props.onModelApiRequest(_model)
+    await this.props.onModelApiRequest(_model)
+  }
+
+  async handleSelectVehicleForm(event){
+    const _model = event.target.value
+    await this.setState({select_model:_model})
+    await this.props.onVehicleApiRequest(this.state.select_make,_model)
   }
   
   render() {
@@ -56,7 +64,7 @@ export class Form extends Component {
                 ?
                     null
                 :
-                    <select>
+                    <select onChange={this.handleSelectVehicleForm}>
                         {carItems = this.props.select_make.map( (res, i) => {
                             return <option value={res} key={i}>{res}</option>
                         })}
@@ -64,7 +72,7 @@ export class Form extends Component {
                    
               }
               
-              <input type="button" value="search"></input>
+              {/* <input type="button" value="search"></input> */}
             </form> 
             </div>
     );
@@ -82,6 +90,7 @@ const mapDispatchToProps = {
     onUpdateDatabase: updateDatabase,
     onDatabaseApiRequest: carDatabaseApiRequest,
     onMakesApiRequest: carMakesApiRequest,
+    onVehicleApiRequest: vehicleApiRequest,
     onShowError: showErrorDatabase
 }
 

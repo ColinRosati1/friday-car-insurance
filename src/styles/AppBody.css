@@ -1,6 +1,8 @@
 @media (max-width: 375px) {
   .app-body-header {
     padding: 1em;
+    color: #7E57C2;
+    font-size: 2em;
   }
   .app-body {
     display: -webkit-box;
@@ -40,8 +42,8 @@
     background-color: #fff;
     -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
             box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
-    margin-bottom: 8px;
-    width: 100%;
+    margin: 8px;
+    width: 80%;
   }
 }
 /*# sourceMappingURL=AppBody.css.map */
