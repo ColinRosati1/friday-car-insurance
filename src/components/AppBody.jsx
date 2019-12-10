@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import '../styles/AppBody.css';
+import '../styles/AppBody.css';
 
 import CarItem from './CarItem'
 
@@ -24,24 +24,38 @@ export class AppBody extends Component {
   }
   
   render() {
-    let carData = this.props.car_data
+    let carData = ''
+    let x = this.props.car_data ? carData = this.props.car_data : null;
+    
     let carItems = []
     console.log(this.props.car_data, this.state)
     
     return (
       <div className="app-body" onClick={this.handleClick}>
-      <header className="app-body-header">
+      <div className="app-body-header">
         Car Data
-      </header>
+      </div>
       {
         (this.state.reveal_database === false
           ?
             <div> Search Cars </div>
           :
-            carItems = carData.map( res => {
-                console.log("cars", res)
-              return <CarItem make={"make"} model={"model"} enginePowerPS={"enginePowerPS"} enginePowerPW={"enginePowerPW"} fuelType={"fuelType"} bodyType={"bodyType"} engineCapacity={"engineCapacity"} />
-            })
+          <div className="form-selection">
+            <form >
+            <select>
+              {carItems = carData.map( res => {
+                  console.log("cars", res)
+                  return <option value={res}>{res}</option>
+              })}
+            </select>
+              <input type="button" value="search"></input>
+            </form> 
+
+          </div>
+            // carItems = carData.map( res => {
+            //     console.log("cars", res)
+            //   return <CarItem make={"make"} model={"model"} enginePowerPS={"enginePowerPS"} enginePowerPW={"enginePowerPW"} fuelType={"fuelType"} bodyType={"bodyType"} engineCapacity={"engineCapacity"} />
+            // })
         )
       }
     </div>

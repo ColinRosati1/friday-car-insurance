@@ -1,0 +1,18 @@
+@media (max-width: 375px) {
+    .app-body-header {
+        padding: 1em;
+    }
+    .app-body {
+        padding: 1em;
+    }
+    .form-selection {
+        background-color: #fff;
+        border: 1px solid black;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .07999999821186066);
+        margin-bottom: 8px;
+        width: 90%;
+    }
+    select {
+        width: 100%;
+    }
+}
