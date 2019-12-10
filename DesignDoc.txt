@@ -1,0 +1,43 @@
+DESIGN DOC
+----------------------
+Design document for Friday code challenge
+
+Overview
+----------------------
+Build a simple web app that allows a user to select their car from a directory of registered cars.
+This data will be provided by the api server in this repo.
+The api provides a list of available makes, models of each make and specific cars for each model with horsepower and engine capacity info.
+
+Task 
+----------------------
+●	Populate Car API request from server 
+●	Display results in database feed component
+●	Select car from database
+
+
+Context
+----------------------
+React, Redux, Flexbox, Jest, Enzyme 
+
+
+Proposed Solution
+----------------------
+Create react app with one async component. This component lists all api results from redux store state.
+Redux actions query api, seach api results. Components render different states based on store. Add a search input
+for the database results.
+Make SASS mobile first media query styles.
+Write some basic unit tests for components.
+
+
+TODOS
+----------------------
+
+
+Steps to Run
+----------------------
+1. Clone this repository
+2. npm install
+3. npm start
+
+
+
