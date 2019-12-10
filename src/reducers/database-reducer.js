@@ -1,4 +1,4 @@
-import { UPDATE_CAR_API_REQUEST, SHOW_CAR_API_REQUEST_ERROR } from '../actions/history-action'
+import { UPDATE_CAR_API_REQUEST, SHOW_CAR_API_REQUEST_ERROR } from '../actions/database-action'
 
 export default function databaseReducer(state = '', { type, payload }) {
     switch (type) {
