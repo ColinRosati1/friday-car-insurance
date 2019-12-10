@@ -19,14 +19,14 @@ export class AppBody extends Component {
 
   async handleClick(){
     await this.props.onDatabaseApiRequest()
-    .then( () => this.setState({reveal_history:true}))
+    .then( () => this.setState({reveal_database:true}))
     
   }
   
   render() {
     let carData = this.props.car_data
     let carItems = []
-    console.log(this.props)
+    console.log(this.props.car_data, this.state)
     
     return (
       <div className="app-body" onClick={this.handleClick}>
