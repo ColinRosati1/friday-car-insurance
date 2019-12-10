@@ -3,9 +3,32 @@
     padding: 1em;
   }
   .app-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 1em;
   }
+  .app-body-search-car {
+    background-color: #fff;
+    border: 1px solid black;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    margin-bottom: 8px;
+    padding: 0.3em;
+    width: 90%;
+  }
   .form-selection {
+    padding: 0.3em;
     background-color: #fff;
     border: 1px solid black;
     -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);

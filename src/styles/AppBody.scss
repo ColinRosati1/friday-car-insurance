@@ -1,11 +1,22 @@
+@import 'mixins.scss';
 @media (max-width: 375px) {
     .app-body-header {
         padding: 1em;
     }
     .app-body {
+        @include flex-center(column, center, center);
         padding: 1em;
     }
+    .app-body-search-car {
+        background-color: #fff;
+        border: 1px solid black;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .07999999821186066);
+        margin-bottom: 8px;
+        padding: 0.3em;
+        width: 90%;
+    }
     .form-selection {
+        padding: 0.3em;
         background-color: #fff;
         border: 1px solid black;
         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .07999999821186066);
