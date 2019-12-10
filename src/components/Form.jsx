@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import '../styles/AppBody.css';
 
-import Form from './Form'
-
 import { updateDatabase, carDatabaseApiRequest, showErrorDatabase } from '../actions/database-action'
 import { carMakesApiRequest } from '../actions/makes-action'
 import { connect } from 'react-redux'
 
-export class AppBody extends Component {
+export class Form extends Component {
   constructor(props) {
     super(props)
   
@@ -17,27 +15,12 @@ export class AppBody extends Component {
     }
 
     this.handleClick = this.handleClick.bind(this)
-    this.handleSelectMakeForm = this.handleSelectMakeForm.bind(this)
   }
 
   async handleClick(){
     await this.props.onDatabaseApiRequest()
     .then( () => this.setState({reveal_database:true}))
     
-  }
-
-  async handleSelectMakeForm(event){
-    const _make = event.target.value
-    await this.setState({select_make:_make})
-    await this.props.onMakesApiRequest(_make)
-    console.log(this.props)
-  }
-
-  async handleSelectModelForm(event){
-    const _model = event.target.value
-    await this.setState({select_model:_model})
-    console.log(_model)
-    // await this.props.onModelApiRequest(_model)
   }
   
   render() {
@@ -48,19 +31,18 @@ export class AppBody extends Component {
     let carItems, makeItems = []
     console.log(this.props)
     return (
-      <div className="app-body" >
-      <div className="app-body-header">
-        Car Types
-      </div>
-      {
-        (this.state.reveal_database === false
-          ?
-            <div className="app-body-search-car" onClick={this.handleClick}> Search Cars </div>
-          :
-          <Form/>
-        )
-      }
-    </div>
+          <div className="form-selection">
+            <form>
+              <select onChange={this.handleSelectMakeForm}>
+              {carItems = this.props.car_data.map( (res, i) => {
+                  return <option value={res} key={i}>{res}</option>
+              })}
+              </select>
+
+              <select></select>
+              <input type="button" value="search"></input>
+            </form> 
+            </div>
     );
   }
 }
@@ -80,4 +62,4 @@ const mapDispatchToProps = {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppBody);
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
