@@ -1,6 +1,6 @@
 import ActionTypes from './action-types'
 
-export const REVEAL_CAR_MODAL = 'select_car:revealLaunchModal'
+export const REVEAL_CAR_MODAL = 'select_car:revealCarModal'
 export const MODAL_ERROR = 'select_car:modalError'
 
 export const showModal = ({ modalProps, modalType }) => dispatch => {
@@ -17,11 +17,11 @@ export const hideModal = () => dispatch => {
     })
 }
 
-export function revealLaunchModal(revealLaunch) {
+export function revealCarModal(revealCar) {
     return {
-        type: REVEAL_LAUNCH_MODAL,
+        type: REVEAL_Car_MODAL,
         payload: {
-            select_car: revealLaunch
+            select_car: revealCar
         }
     }
 }
