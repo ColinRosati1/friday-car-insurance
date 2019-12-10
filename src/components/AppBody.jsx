@@ -17,7 +17,6 @@ export class AppBody extends Component {
     }
 
     this.handleClick = this.handleClick.bind(this)
-    this.handleSelectMakeForm = this.handleSelectMakeForm.bind(this)
   }
 
   async handleClick(){
@@ -26,27 +25,8 @@ export class AppBody extends Component {
     
   }
 
-  async handleSelectMakeForm(event){
-    const _make = event.target.value
-    await this.setState({select_make:_make})
-    await this.props.onMakesApiRequest(_make)
-    console.log(this.props)
-  }
-
-  async handleSelectModelForm(event){
-    const _model = event.target.value
-    await this.setState({select_model:_model})
-    console.log(_model)
-    // await this.props.onModelApiRequest(_model)
-  }
-  
+ 
   render() {
-    let carData, selectMake = ''
-    let x = this.props.car_data ? carData = this.props.car_data : null;
-    let y = this.props.select_make ? selectMake = this.props.select_make : null;
-    
-    let carItems, makeItems = []
-    console.log(this.props)
     return (
       <div className="app-body" >
       <div className="app-body-header">
