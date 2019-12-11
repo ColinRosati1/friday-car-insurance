@@ -51,11 +51,6 @@ $mute-bg: rgb(248, 233, 160);
         text-align: left;
         padding: 1.5em;
         border: 1px solid black;
-        &:hover,
-         :active {
-            box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
-            background-color: #FFE24F;
-        }
     }
     .error {
         padding: 1em;
@@ -65,19 +60,20 @@ $mute-bg: rgb(248, 233, 160);
 
 @media (max-width: 2216px) {
     .app-body-header {
-        padding: 1em;
+        padding: 0.5em;
         color: #7E57C2;
         font-size: 2em;
     }
     .app-body {
         @include flex-center(column, center, center);
         padding: 1em;
+        font-size: 1.5em;
     }
     .app-body-search-car {
         background-color: #fff;
         @include blur-shadow;
         margin-bottom: 8px;
-        padding: 0.3em;
+        padding: 2em;
         width: 90%;
     }
     .form-selection {
@@ -86,6 +82,7 @@ $mute-bg: rgb(248, 233, 160);
         @include blur-shadow;
         margin-bottom: 20px;
         width: 90%;
+        font-size: 1.5em;
         &:hover,
          :focus {
             box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
@@ -99,21 +96,24 @@ $mute-bg: rgb(248, 233, 160);
         box-shadow: 2px 8px 50 rgba(0, 0, 0, .07999999821186066);
         margin: 8px;
         width: 80%;
-        height: 28px;
+        height: 58px;
+        padding: 0 25px 0;
+        font-size: 0.8em;
+        &.select-option {
+            padding: 10px;
+        }
     }
     .car-item {
         width: 70vw;
         text-align: left;
         padding: 1.5em;
         border: 1px solid black;
-        &:hover,
-         :active {
-            box-shadow: 2px 2px 4px 1px rgba(29, 27, 27, 0.38);
-            background-color: rgb(248, 233, 160);
+        &:hover {
+            background: $bg-mute;
         }
     }
     .error {
-        padding: 5em;
+        padding: 1em;
         font-size: 2em;
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { revealCarModal }  from '../actions/modal-action'
+import { showCarModal }  from '../actions/modal-action'
 import { connect } from 'react-redux'
 
  
@@ -53,7 +53,7 @@ class SelectCarModal extends React.Component {
   componentWillReceiveProps(nextProps){
     if(nextProps.select_car!==this.props.select_car){
       // console.log("new car props")
-      // this.openModal()
+      this.openModal()
     }
   }
 
@@ -103,13 +103,12 @@ class SelectCarModal extends React.Component {
  
 const mapStateToProps = (state, props) => {
     return{
-      car_data: state.database,
-      select_car: state.select_car,
+      users_car: state.users_car,
     }
   }
   
   const mapDispatchToProps = {
-      onRevealCarModal: revealCarModal
+      onShowCarModal:  showCarModal
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectCarModal)

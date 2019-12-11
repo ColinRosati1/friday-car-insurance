@@ -1,17 +1,16 @@
-export const SHOW_MODAL_API_REQUEST_ERROR = 'select_make:showErrorDatabase'
-export const SHOW_MODAL = 'select_make:updateCarMake'
+export const SHOW_MODAL_API_REQUEST_ERROR = 'users_vehicle:showErrorModal'
+export const SHOW_MODAL = 'users_vehicle:showCarModal'
 
-export function updateCarMake(newVehicle) {
-    console.log("updateCarMAke action", newVehicle)
+
+export function showCarModal(userVehical) {
+    console.log("updateCarMAke action", userVehical)
     return {
         type: SHOW_MODAL,
         payload: {
-            select_vehicle: newVehicle
+            users_vehicle: userVehical
         }
     }
 }
-
-export function revealCarModal() {}
 
 export function showErrorModal() {
     return {
@@ -30,7 +29,7 @@ export function carVehicleApiRequest(sel_vehicle) {
         return fetch('http://localhost:8080/api/models?vehicle=' + sel_vehicle)
             .then(response => response.json())
             .then(response => {
-                dispatch(updateCarMake(response))
+                dispatch(showCarModal(response))
             })
             .catch(err => {
                 console.log("API ERROR")

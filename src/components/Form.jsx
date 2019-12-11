@@ -50,7 +50,7 @@ export class Form extends Component {
     
     let carItems, makeItems = []
     return (
-          <div className="form-selection" >
+          <div className="form-selection"  data-test="form-selection" >
             <form>
               {this.props.car_data === "ERROR!!"
                 ?
@@ -58,7 +58,7 @@ export class Form extends Component {
                 :
                 <select onChange={this.handleSelectMakeForm}>
                   {carItems = this.props.car_data.map( (res, i) => {
-                    return <option value={res} key={i}>{res}</option>
+                    return <option className={"select-option"} value={res} key={i}>{res}</option>
                 })}
                 </select>
               } 

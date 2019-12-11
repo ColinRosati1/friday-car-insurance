@@ -16,7 +16,7 @@ const allReducer = combineReducers({
     car_data: databaseReducer,
     select_make: makesReducer,
     select_vehicle: vehicleReducer,
-    select_car: vehicleReducer,
+    users_vehicle: modalReducer,
 })
 
 const allStoreEnhancers = compose(
@@ -29,14 +29,14 @@ const store = createStore(
         car_data: {},
         select_make: {},
         select_vehicle: {},
-        select_car: {}
+        users_vehicle: {}
     },
     allStoreEnhancers
 )
 
 export default store
 
-ReactDOM.render( <Provider store={store}><App/></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
 
 
         // If you want your app to work offline and load faster, you can change
