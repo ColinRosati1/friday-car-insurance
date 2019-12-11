@@ -61,11 +61,11 @@ export class AppBody extends Component {
                {this.props.select_vehicle === "ERROR!!"
                 ?
                   // <div onClick={this.handleClick}> OOPs API Error. try again </div>
-                  <div> OOPs API Error. try again </div>
+                  <div className={"error"}> OOPs API Error. try again </div>
                 :
                 <div>{
                   carItems =  this.props.select_vehicle.map( (res, i) => {
-                    return <CarItem key={i} make={res.make} model={res.model} enginePowerPS={res.enginePowerPS} enginePowerPW={res.enginePowerPW} fuelType={res.fuelType} bodyType={res.bodyType} engineCapacity={res.engineCapacity}/>
+                    return <CarItem key={i} id={i} make={res.make} model={res.model} enginePowerPS={res.enginePowerPS} enginePowerPW={res.enginePowerPW} fuelType={res.fuelType} bodyType={res.bodyType} engineCapacity={res.engineCapacity}/>
                   })
                 }</div>
                 }

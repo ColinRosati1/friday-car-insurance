@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { showCarModal }  from '../actions/modal-action'
 import { connect } from 'react-redux'
+import '../styles/AppBody.css';
 
  
 const customStyles = {
@@ -14,9 +15,10 @@ const customStyles = {
     padding               : ' 1em',
     transform             : 'translate(-50%, -50%)',
     width                 : '80%',
-    height                : '30%',
-    background            : 'black',
-    color                 : 'white'
+    height                : '60%',
+    background            : 'white',
+    color                 : 'black',
+    fontsize              : '1.5em'
   }
 };
  
@@ -51,8 +53,9 @@ class SelectCarModal extends React.Component {
   // Modal reacts to updata selected mission props
   // using outdated react effect for the time being. I realize this is depricated
   componentWillReceiveProps(nextProps){
-    if(nextProps.select_car!==this.props.select_car){
-      // console.log("new car props")
+    console.log("new car props",this.props.users_vehicle,this.props)
+    if(nextProps.users_vehicle!==this.props.users_vehicle){
+      console.log("new car props")
       this.openModal()
     }
   }
@@ -76,9 +79,8 @@ class SelectCarModal extends React.Component {
 
   render() {
    let car = ''
-  //  if(this.props.select_car[0]){
-  //    car = this.props.select_car[0];
-  //  }
+   const {make, model, enginePowerPS, enginePowerPW, fuelType, bodyType, engineCapacity} = this.props.users_vehicle
+  console.log("props", this.props.users_vehicle)
     return (
       <div>
         <Modal
@@ -89,12 +91,19 @@ class SelectCarModal extends React.Component {
           contentLabel="Example Modal"
         >
           <button className={"modal-button"} onClick={this.closeModal}>close</button>
-          <form onSubmit={this.handleModalSubmit}>
-          <label className="modal-form">See insurance offers
-            <input type="text" name="name" />
-          </label>
-          <input type="submit" value="search" />
-        </form>
+          <div className="modal-wrapper">
+            <div>{this.props.users_vehicle[0]}</div>
+            <div>{this.props.users_vehicle[1]}</div>
+            <div>{this.props.users_vehicle[2]}</div>
+            <div>{this.props.users_vehicle[3]}</div>
+            <div>{this.props.users_vehicle[4]}</div>
+            <div>{this.props.users_vehicle[5]}</div>
+            <div>{this.props.users_vehicle[6]}</div>
+          </div>
+            <form onSubmit={this.handleModalSubmit}>
+            <label className="modal-form">See insurance offers</label>
+            <input type="submit" value="search" />
+          </form>
         </Modal>
       </div>
     );
@@ -103,7 +112,7 @@ class SelectCarModal extends React.Component {
  
 const mapStateToProps = (state, props) => {
     return{
-      users_car: state.users_car,
+      users_vehicle: state.users_vehicle,
     }
   }
   

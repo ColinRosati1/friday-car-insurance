@@ -6,46 +6,35 @@ import { showCarModal }  from '../actions/modal-action'
 export class CarItem  extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
     this.state = {
-      key: props.model
+      id: props.i
     }
 
     this.vehicalModal = this.vehicalModal.bind(this)
   }
   vehicalModal(event){
-    console.log("vehicle modal", this.props.model, event.currentTarget.children)
-    let vehicleObj = '';
-    let arr = event.currentTarget.children
-    let sel = document.querySelectorAll("."+ this.props.model)
-    console.log(arr, sel)
-    const vehicleArry =  arr.map( (res, i) => {
-      return vehicleObj = { ...event.currentTarget.children[i].textContent }
+    let id = this.props.id
+    let sel = document.querySelectorAll(".id"+ this.props.id)
+    const vehicleArry =  [...sel]
+    const obj = vehicleArry.map(res => {
+      return res.innerText
     })
-    
-    console.log(vehicleObj)
-    console.log(vehicleArry)
-    const usersCar = {
-    vehicleArry
-    }
   
-    // this.props.onShowCarModal(vehicleArry)
+    this.props.onShowCarModal(obj)
   }
   
 
   render(){
-    const {make, model, enginePowerPS, enginePowerPW, fuelType, bodyType, engineCapacity, key} = this.props
-  
+    const {make, model, enginePowerPS, enginePowerPW, fuelType, bodyType, engineCapacity, id} = this.props
     return (
-      // <div className="car-item" onClick={this.vehicalModal}>
-      <div className="car-item" data-test="car-item" >
-        <div className={"car "+this.props.model+" car-item-make"}>{make}</div>
-        <div className={"car "+this.props.model+" car-item-model"}>{model}</div>
-        <div className={"car "+this.props.model+" car-item-enginePowerPS"}>{enginePowerPS}</div>
-        <div className={"car "+this.props.model+" car-item-enginePowerPW"}>{enginePowerPW}</div>
-        <div className={"car "+this.props.model+" car-item-fuelType"}>{fuelType}</div>
-        <div className={"car "+this.props.model+" car-item-bodyType"}>{bodyType}</div>
-        <div className={"car "+this.props.model+" car-item-engineCapacity"}>{engineCapacity}</div>
+      <div className="car-item" data-test="car-item" onClick={this.vehicalModal}>
+        <div className={"car id"+id+" car-item-make"}>{make}</div>
+        <div className={"car id"+id+" car-item-model"}>{model}</div>
+        <div className={"car id"+id+" car-item-enginePowerPS"}>{enginePowerPS}</div>
+        <div className={"car id"+id+" car-item-enginePowerPW"}>{enginePowerPW}</div>
+        <div className={"car id"+id+" car-item-fuelType"}>{fuelType}</div>
+        <div className={"car id"+id+" car-item-bodyType"}>{bodyType}</div>
+        <div className={"car id"+id+" car-item-engineCapacity"}>{engineCapacity}</div>
       </div>
     );
   }

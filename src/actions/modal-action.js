@@ -3,7 +3,6 @@ export const SHOW_MODAL = 'users_vehicle:showCarModal'
 
 
 export function showCarModal(userVehical) {
-    console.log("updateCarMAke action", userVehical)
     return {
         type: SHOW_MODAL,
         payload: {

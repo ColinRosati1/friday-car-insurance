@@ -1,147 +1,195 @@
 @media (max-width: 414px) {
-    .app-body-header {
-        padding: 1em;
-        color: #7E57C2;
-        font-size: 2em;
-    }
-    .app-body {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
+  .app-body-header {
+    padding: 0.5em;
+    color: #7E57C2;
+    font-size: 1.5em;
+  }
+  .app-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
         -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
         -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: center;
+            flex-direction: column;
+    -webkit-box-align: center;
         -ms-flex-align: center;
-        align-items: center;
-        padding: 1em;
-    }
-    .app-body-search-car {
-        background-color: #fff;
-        -webkit-box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
-        box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
-        border: 1px solid black;
-        margin-bottom: 8px;
-        padding: 0.3em;
-        width: 90%;
-    }
-    .form-selection {
-        padding: 0.3em;
-        background-color: #fff;
-        -webkit-box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
-        box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
-        border: 1px solid black;
-        margin-bottom: 20px;
-        width: 90%;
-    }
-    .form-selection:hover,
-    .form-selection :focus {
-        -webkit-box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
-        box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
-    }
-    form {
-        padding: 15px;
-    }
-    select {
-        background-color: #fff;
-        border-radius: 6px;
-        -webkit-box-shadow: 2px 8px 50 rgba(0, 0, 0, 0.08);
-        box-shadow: 2px 8px 50 rgba(0, 0, 0, 0.08);
-        margin: 8px;
-        padding: 0 15px 0;
-        width: 80%;
-        height: 28px;
-    }
-    .car-item {
-        width: 70vw;
-        text-align: left;
-        padding: 1.5em;
-        border: 1px solid black;
-    }
-    .error {
-        padding: 1em;
-        font-size: 1.5em;
-    }
+            align-items: center;
+    padding: 1em;
+  }
+  .app-body-search-car {
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+            box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+    border: 1px solid black;
+    margin-bottom: 8px;
+    padding: 0.3em;
+    width: 90%;
+  }
+  .form-selection {
+    padding: 0.3em;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+            box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+    border: 1px solid black;
+    margin-bottom: 20px;
+    width: 90%;
+  }
+  .form-selection:hover,
+  .form-selection :focus {
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+            box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+  }
+  form {
+    padding: 15px;
+  }
+  select {
+    background-color: #fff;
+    border-radius: 6px;
+    -webkit-box-shadow: 2px 8px 50 rgba(0, 0, 0, 0.08);
+            box-shadow: 2px 8px 50 rgba(0, 0, 0, 0.08);
+    margin: 8px;
+    padding: 0 15px 0;
+    width: 80%;
+    height: 28px;
+  }
+  .car-item {
+    width: 70vw;
+    text-align: left;
+    padding: 1.5em;
+    border: 1px solid black;
+  }
+  .error {
+    padding: 1em;
+    font-size: 1.5em;
+  }
+  .modal-wrapper {
+    padding: 1em;
+    font-size: 1.5em;
+  }
 }
 
-@media (max-width: 2216px) {
-    .app-body-header {
-        padding: 0.5em;
-        color: #7E57C2;
-        font-size: 2em;
-    }
-    .app-body {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
+@media (min-width: 456px) {
+  .app-body-header {
+    padding: 0.5em;
+    color: #7E57C2;
+    font-size: 2em;
+  }
+  .app-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
         -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
         -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: center;
+            flex-direction: column;
+    -webkit-box-align: center;
         -ms-flex-align: center;
-        align-items: center;
-        padding: 1em;
-        font-size: 1.5em;
-    }
-    .app-body-search-car {
-        background-color: #fff;
-        -webkit-box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
-        box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
-        border: 1px solid black;
-        margin-bottom: 8px;
-        padding: 2em;
-        width: 90%;
-    }
-    .form-selection {
-        padding: 0.3em;
-        background-color: #fff;
-        -webkit-box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
-        box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
-        border: 1px solid black;
-        margin-bottom: 20px;
-        width: 90%;
-        font-size: 1.5em;
-    }
-    .form-selection:hover,
-    .form-selection :focus {
-        -webkit-box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
-        box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
-    }
-    form {
-        padding: 15px;
-    }
-    select {
-        background-color: #fff;
-        -webkit-box-shadow: 2px 8px 50 rgba(0, 0, 0, 0.08);
-        box-shadow: 2px 8px 50 rgba(0, 0, 0, 0.08);
-        margin: 8px;
-        width: 80%;
-        height: 58px;
-        padding: 0 25px 0;
-        font-size: 0.8em;
-    }
-    .car-item {
-        width: 70vw;
-        text-align: left;
-        padding: 1.5em;
-        border: 1px solid black;
-    }
-    .car-item:hover {
-        background: #FFE24F;
-    }
-    .error {
-        padding: 1em;
-        font-size: 2em;
-    }
+            align-items: center;
+    padding: 1em;
+    font-size: 1.5em;
+  }
+  .app-body-search-car {
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+            box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+    border: 1px solid black;
+    margin-bottom: 8px;
+    padding: 2em;
+    width: 90%;
+  }
+  .form-selection {
+    padding: 0.3em;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+            box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+    border: 1px solid black;
+    margin-bottom: 20px;
+    width: 90%;
+    font-size: 1.5em;
+  }
+  .form-selection:hover,
+  .form-selection :focus {
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+            box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+  }
+  form {
+    padding: 15px;
+  }
+  select {
+    background-color: #fff;
+    -webkit-box-shadow: 2px 8px 50 rgba(0, 0, 0, 0.08);
+            box-shadow: 2px 8px 50 rgba(0, 0, 0, 0.08);
+    margin: 8px;
+    width: 80%;
+    height: 58px;
+    padding: 0 25px 0;
+    font-size: 0.8em;
+  }
+  select.select-option {
+    padding: 10px;
+  }
+  .car-item {
+    width: 70vw;
+    text-align: left;
+    padding: 1.5em;
+    border: 1px solid black;
+  }
+  .car-item:hover {
+    background: #f8e9a0;
+  }
+  .error {
+    padding: 1em;
+    font-size: 2em;
+  }
+  .modal-wrapper {
+    padding: 1em;
+    font-size: 1.5em;
+  }
+  input[type=submit] {
+    height: 25px;
+    background-color: #000;
+    color: #fff;
+    width: 20%;
+    margin-left: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+  input[type=submit]:hover {
+    background-color: #000;
+    color: #FFF;
+    -webkit-transition: all 0.5;
+    transition: all 0.5;
+  }
+  .modal-form input[type=text] {
+    margin-top: 1em;
+    width: 50%;
+    margin-left: 20px;
+  }
+  .modal-form {
+    padding: 1em;
+    text-align: center;
+  }
+  .modal-button {
+    height: 25px;
+    background-color: #000;
+    color: #fff;
+    width: 10%;
+    margin-left: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+  .modal-button:hover {
+    background-color: #000;
+    color: #FFF;
+    -webkit-transition: all 0.5;
+    transition: all 0.5;
+  }
 }
-
-
 /*# sourceMappingURL=AppBody.css.map */

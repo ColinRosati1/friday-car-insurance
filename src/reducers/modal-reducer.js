@@ -7,14 +7,10 @@ const initialState = {
         open: false
     }
 }
-export default function modalReducer(state = initialState, action) {
-    switch (action.type) {
-        case ActionTypes.SHOW_MODAL:
-            return {
-                modalProps: action.modalProps,
-                modalType: action.modalType,
-                type: action.type
-            }
+export default function modalReducer(state = {}, { type, payload }) {
+    switch (type) {
+        case SHOW_MODAL:
+            return payload.users_vehicle;
         case ActionTypes.HIDE_MODAL:
             return initialState
         default:
