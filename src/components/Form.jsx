@@ -45,8 +45,8 @@ export class Form extends Component {
 
   render() {
     let carData, selectMake = ''
-    let x = this.props.car_data ? carData = this.props.car_data : null;
-    let y = this.props.select_make.length  ? selectMake = this.props.select_make : null;
+    // let x = this.props.car_data ? carData = this.props.car_data : null;
+    // let y = this.props.select_make.length  ? selectMake = this.props.select_make : null;
     
     let carItems, makeItems = []
     return (

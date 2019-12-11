@@ -35,6 +35,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "keymirror": "^0.1.1",
-    "react-modal": "^3.11.1"
+    "react-modal": "^3.11.1",
+    "react-redux": "^7.1.3"
   }
 }
