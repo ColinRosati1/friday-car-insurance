@@ -28,12 +28,8 @@ export class AppBody extends Component {
   }
   
   async componentWillReceiveProps(nextProps){
-    console.log("next props", this.props)
     if(nextProps.select_vehicle!==this.props.select_vehicle){
-      console.log("next props", nextProps.select_vehicle)
       await this.setState({reveal_feed: true})
-      console.log(this.state)
-      // this.openModal()
     }
   }
   
@@ -61,8 +57,7 @@ export class AppBody extends Component {
           :
             <div>
               {
-                carItems = this.props.select_vehicle.map( (res, i) => {
-                  console.log(res)
+                carItems =  this.props.select_vehicle.map( (res, i) => {
                   return <CarItem key={i} make={res.make} model={res.model} enginePowerPS={res.enginePowerPS} enginePowerPW={res.enginePowerPW} fuelType={res.fuelType} bodyType={res.bodyType} engineCapacity={res.engineCapacity}/>
                 })
               }

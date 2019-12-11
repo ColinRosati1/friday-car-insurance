@@ -2,7 +2,6 @@ export const UPDATE_CAR_API_REQUEST = 'car_data:updateDatabase'
 export const SHOW_CAR_API_REQUEST_ERROR = 'car_data:showErrorDatabase'
 
 export function updateDatabase(newCar) {
-    console.log("updateDatabase action", newCar)
     return {
         type: UPDATE_CAR_API_REQUEST,
         payload: {
@@ -27,12 +26,11 @@ export function carDatabaseApiRequest() {
         return fetch('http://localhost:8080/api/makes')
             .then(response => response.json())
             .then(response => {
-                console.log(response)
                 dispatch(updateDatabase(response))
             })
             .catch(err => {
                 console.log("API ERROR", err)
-                    // dispatch(showErrorDatabase())
+                dispatch(showErrorDatabase())
             })
     }
 }

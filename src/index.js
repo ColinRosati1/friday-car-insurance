@@ -33,8 +33,6 @@ const store = createStore(
     },
     allStoreEnhancers
 )
-console.log(store)
-
 
 export default store
 
