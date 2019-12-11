@@ -21,7 +21,7 @@ export class Form extends Component {
 
   async handleClick(){
     await this.props.onDatabaseApiRequest()
-    .then( () => this.setState({reveal_database:true}))
+    .then( () => setTimeout(()=>{this.setState({reveal_database:true})},1000))
     
   }
 
@@ -29,13 +29,11 @@ export class Form extends Component {
     const _make = event.target.value
     await this.setState({select_make:_make})
     await this.props.onMakesApiRequest(_make)
-    console.log(this.props)
   }
 
   async handleSelectModelForm(event){
     const _model = event.target.value
     await this.setState({select_model:_model})
-    console.log(_model)
     await this.props.onModelApiRequest(_model)
   }
 
@@ -44,14 +42,13 @@ export class Form extends Component {
     await this.setState({select_model:_model})
     await this.props.onVehicleApiRequest(this.state.select_make,_model)
   }
-  
+
   render() {
     let carData, selectMake = ''
     let x = this.props.car_data ? carData = this.props.car_data : null;
     let y = this.props.select_make.length  ? selectMake = this.props.select_make : null;
     
     let carItems, makeItems = []
-    console.log(this.props, this.props.select_make.length)
     return (
           <div className="form-selection">
             <form>
@@ -69,7 +66,6 @@ export class Form extends Component {
                             return <option value={res} key={i}>{res}</option>
                         })}
                     </select>
-                   
               }
               
               {/* <input type="button" value="search"></input> */}

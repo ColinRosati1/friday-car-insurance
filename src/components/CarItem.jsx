@@ -1,20 +1,9 @@
 import React from 'react';
-// import '../styles/AppBody.css';
+import '../styles/AppBody.css';
 
-/**
- *
- * @param {*} props
- * @returns make: string `// the make of the car`
- * @returns model: string `// the model of the car`
- * @returns enginePowerPS: number `// engine power in Horsepower units`
- * @returns enginePowerPW: number `// engine power in KiloWatts`
- * @returns fuelType: string `// fuel type`
- * @returns bodyType: string `// body type`
- * @returns engineCapacity: number `// engine capacity in cc`
- * 
- */
-function CarItem(props) {
+const CarItem = (props) => {
   const {make, model, enginePowerPS, enginePowerPW, fuelType, bodyType, engineCapacity} = props
+ 
   return (
     <div className="car-item">
       <div className="car-item-make">{make}</div>
@@ -27,5 +16,5 @@ function CarItem(props) {
     </div>
   );
 }
-
-export default CarItem;
+ 
+export default CarItem

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/AppBody.css';
 
 import Form from './Form'
+import CarItem from './CarItem'
 
 import { updateDatabase, carDatabaseApiRequest, showErrorDatabase } from '../actions/database-action'
 import { carMakesApiRequest } from '../actions/makes-action'
@@ -13,6 +14,7 @@ export class AppBody extends Component {
   
     this.state = {
        reveal_database: false,
+       reveal_feed: false,
        select_make: ''
     }
 
@@ -24,9 +26,21 @@ export class AppBody extends Component {
     .then( () => this.setState({reveal_database:true}))
     
   }
+  
+  async componentWillReceiveProps(nextProps){
+    console.log("next props", this.props)
+    if(nextProps.select_vehicle!==this.props.select_vehicle){
+      console.log("next props", nextProps.select_vehicle)
+      await this.setState({reveal_feed: true})
+      console.log(this.state)
+      // this.openModal()
+    }
+  }
+  
 
  
   render() {
+    let carItems ='';
     return (
       <div className="app-body" >
       <div className="app-body-header">
@@ -40,6 +54,22 @@ export class AppBody extends Component {
           <Form/>
         )
       }
+      {
+        (this.state.reveal_feed === false
+          ?
+            null
+          :
+            <div>
+              {
+                carItems = this.props.select_vehicle.map( (res, i) => {
+                  console.log(res)
+                  return <CarItem key={i} make={res.make} model={res.model} enginePowerPS={res.enginePowerPS} enginePowerPW={res.enginePowerPW} fuelType={res.fuelType} bodyType={res.bodyType} engineCapacity={res.engineCapacity}/>
+                })
+              }
+            </div>
+            
+        )
+      }
     </div>
     );
   }
@@ -48,7 +78,8 @@ export class AppBody extends Component {
 const mapStateToProps = (state, props) => {
   return{
     car_data: state.car_data,
-    select_make: state.select_make
+    select_make: state.select_make,
+    select_vehicle: state.select_vehicle
   }
 }
 

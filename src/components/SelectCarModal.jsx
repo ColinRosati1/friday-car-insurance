@@ -52,7 +52,7 @@ class SelectCarModal extends React.Component {
   // using outdated react effect for the time being. I realize this is depricated
   componentWillReceiveProps(nextProps){
     if(nextProps.select_car!==this.props.select_car){
-      console.log("new car props")
+      // console.log("new car props")
       // this.openModal()
     }
   }
