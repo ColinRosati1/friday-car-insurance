@@ -29,7 +29,9 @@ export class AppBody extends Component {
   
   async componentWillReceiveProps(nextProps){
     if(nextProps.select_vehicle!==this.props.select_vehicle){
-      await this.setState({reveal_feed: true})
+      // await this.setState({reveal_feed: true})
+      setTimeout(async()=>{ await this.setState({reveal_feed: true})},100)
+      // .then( async() => await this.setState({reveal_feed: true}}))
     }
   }
   
@@ -56,11 +58,17 @@ export class AppBody extends Component {
             null
           :
             <div>
-              {
-                carItems =  this.props.select_vehicle.map( (res, i) => {
-                  return <CarItem key={i} make={res.make} model={res.model} enginePowerPS={res.enginePowerPS} enginePowerPW={res.enginePowerPW} fuelType={res.fuelType} bodyType={res.bodyType} engineCapacity={res.engineCapacity}/>
-                })
-              }
+               {this.props.select_vehicle === "ERROR!!"
+                ?
+                  // <div onClick={this.handleClick}> OOPs API Error. try again </div>
+                  <div> OOPs API Error. try again </div>
+                :
+                <div>{
+                  carItems =  this.props.select_vehicle.map( (res, i) => {
+                    return <CarItem key={i} make={res.make} model={res.model} enginePowerPS={res.enginePowerPS} enginePowerPW={res.enginePowerPW} fuelType={res.fuelType} bodyType={res.bodyType} engineCapacity={res.engineCapacity}/>
+                  })
+                }</div>
+                }
             </div>
             
         )

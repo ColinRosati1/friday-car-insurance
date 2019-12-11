@@ -29,6 +29,10 @@ $mute-bg: rgb(248, 233, 160);
         @include blur-shadow;
         margin-bottom: 20px;
         width: 90%;
+        &:hover,
+         :focus {
+            box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+        }
     }
     form {
         padding: 15px;
@@ -52,6 +56,10 @@ $mute-bg: rgb(248, 233, 160);
             box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
             background-color: #FFE24F;
         }
+    }
+    .error {
+        padding: 1em;
+        font-size: 1.5em;
     }
 }
 
@@ -78,6 +86,10 @@ $mute-bg: rgb(248, 233, 160);
         @include blur-shadow;
         margin-bottom: 20px;
         width: 90%;
+        &:hover,
+         :focus {
+            box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+        }
     }
     form {
         padding: 15px;
@@ -99,5 +111,9 @@ $mute-bg: rgb(248, 233, 160);
             box-shadow: 2px 2px 4px 1px rgba(29, 27, 27, 0.38);
             background-color: rgb(248, 233, 160);
         }
+    }
+    .error {
+        padding: 5em;
+        font-size: 2em;
     }
 }

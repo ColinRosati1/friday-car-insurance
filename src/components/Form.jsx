@@ -21,7 +21,7 @@ export class Form extends Component {
 
   async handleClick(){
     await this.props.onDatabaseApiRequest()
-    .then( () => setTimeout(()=>{this.setState({reveal_database:true})},1000))
+    .then( async() => await this.setState({reveal_database:true}))
     
   }
 
@@ -50,25 +50,33 @@ export class Form extends Component {
     
     let carItems, makeItems = []
     return (
-          <div className="form-selection">
+          <div className="form-selection" >
             <form>
-              <select onChange={this.handleSelectMakeForm}>
-              {carItems = this.props.car_data.map( (res, i) => {
-                  return <option value={res} key={i}>{res}</option>
-              })}
-              </select>
+              {this.props.car_data === "ERROR!!"
+                ?
+                  <div onClick={this.handleClick} className={"error"}> OOPs API Error. try again </div>
+                :
+                <select onChange={this.handleSelectMakeForm}>
+                  {carItems = this.props.car_data.map( (res, i) => {
+                    return <option value={res} key={i}>{res}</option>
+                })}
+                </select>
+              } 
               {!this.props.select_make.length
                 ?
                     null
                 :
+                  <div>{this.props.select_make === "ERROR!!"
+                  ?
+                    <div className={"error"}> OOPs API Error. try again </div>
+                  :
                     <select onChange={this.handleSelectVehicleForm}>
-                        {carItems = this.props.select_make.map( (res, i) => {
-                            return <option value={res} key={i}>{res}</option>
-                        })}
+                      {carItems = this.props.select_make.map( (res, i) => {
+                          return <option value={res} key={i}>{res}</option>
+                      })}
                     </select>
+                }</div>
               }
-              
-              {/* <input type="button" value="search"></input> */}
             </form> 
             </div>
     );

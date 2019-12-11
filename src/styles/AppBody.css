@@ -38,6 +38,11 @@
     margin-bottom: 20px;
     width: 90%;
   }
+  .form-selection:hover,
+  .form-selection :focus {
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+            box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+  }
   form {
     padding: 15px;
   }
@@ -62,6 +67,10 @@
     -webkit-box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
             box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
     background-color: #FFE24F;
+  }
+  .error {
+    padding: 1em;
+    font-size: 1.5em;
   }
 }
 
@@ -105,6 +114,11 @@
     margin-bottom: 20px;
     width: 90%;
   }
+  .form-selection:hover,
+  .form-selection :focus {
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+            box-shadow: 2px 2px 5px 1px rgba(29, 27, 27, 0.28);
+  }
   form {
     padding: 15px;
   }
@@ -127,6 +141,10 @@
     -webkit-box-shadow: 2px 2px 4px 1px rgba(29, 27, 27, 0.38);
             box-shadow: 2px 2px 4px 1px rgba(29, 27, 27, 0.38);
     background-color: #f8e9a0;
+  }
+  .error {
+    padding: 5em;
+    font-size: 2em;
   }
 }
 /*# sourceMappingURL=AppBody.css.map */

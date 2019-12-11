@@ -15,7 +15,7 @@ export function showErrorDatabase() {
     return {
         type: SHOW_CAR_API_REQUEST_ERROR,
         payload: {
-            car_data_error: 'ERROR!!'
+            car_data: 'ERROR!!'
         }
     }
 }
