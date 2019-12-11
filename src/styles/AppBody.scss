@@ -1,5 +1,12 @@
 @import 'mixins.scss';
-@media (max-width: 375px) {
+@mixin blur-shadow {
+    box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+    border: 1px solid black;
+}
+
+$bg: #FFE24F;
+$mute-bg: rgb(248, 233, 160);
+@media (max-width: 414px) {
     .app-body-header {
         padding: 1em;
         color: #7E57C2;
@@ -11,8 +18,7 @@
     }
     .app-body-search-car {
         background-color: #fff;
-        border: 1px solid black;
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .07999999821186066);
+        @include blur-shadow;
         margin-bottom: 8px;
         padding: 0.3em;
         width: 90%;
@@ -20,15 +26,78 @@
     .form-selection {
         padding: 0.3em;
         background-color: #fff;
-        border: 1px solid black;
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .07999999821186066);
-        margin-bottom: 8px;
+        @include blur-shadow;
+        margin-bottom: 20px;
         width: 90%;
+    }
+    form {
+        padding: 15px;
     }
     select {
         background-color: #fff;
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .07999999821186066);
+        border-radius: 6px;
+        box-shadow: 2px 8px 50 rgba(0, 0, 0, .07999999821186066);
+        margin: 8px;
+        padding: 0 15px 0;
+        width: 80%;
+        height: 28px;
+    }
+    .car-item {
+        width: 70vw;
+        text-align: left;
+        padding: 1.5em;
+        border: 1px solid black;
+        &:hover,
+         :active {
+            box-shadow: 1px 1px 4px 1px rgba(29, 27, 27, 0.28);
+            background-color: #FFE24F;
+        }
+    }
+}
+
+@media (max-width: 2216px) {
+    .app-body-header {
+        padding: 1em;
+        color: #7E57C2;
+        font-size: 2em;
+    }
+    .app-body {
+        @include flex-center(column, center, center);
+        padding: 1em;
+    }
+    .app-body-search-car {
+        background-color: #fff;
+        @include blur-shadow;
+        margin-bottom: 8px;
+        padding: 0.3em;
+        width: 90%;
+    }
+    .form-selection {
+        padding: 0.3em;
+        background-color: #fff;
+        @include blur-shadow;
+        margin-bottom: 20px;
+        width: 90%;
+    }
+    form {
+        padding: 15px;
+    }
+    select {
+        background-color: #fff;
+        box-shadow: 2px 8px 50 rgba(0, 0, 0, .07999999821186066);
         margin: 8px;
         width: 80%;
+        height: 28px;
+    }
+    .car-item {
+        width: 70vw;
+        text-align: left;
+        padding: 1.5em;
+        border: 1px solid black;
+        &:hover,
+         :active {
+            box-shadow: 2px 2px 4px 1px rgba(29, 27, 27, 0.38);
+            background-color: rgb(248, 233, 160);
+        }
     }
 }
