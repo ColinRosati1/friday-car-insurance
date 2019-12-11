@@ -3,7 +3,6 @@ import Modal from 'react-modal';
 import { showCarModal }  from '../actions/modal-action'
 import { connect } from 'react-redux'
 import '../styles/AppBody.css';
-
  
 const customStyles = {
   content : {
@@ -47,20 +46,17 @@ class SelectCarModal extends React.Component {
   }
 
   componentDidMount() {
-    // Modal.setAppElement('body');
  }
  
   // Modal reacts to updata selected mission props
   // using outdated react effect for the time being. I realize this is depricated
   componentWillReceiveProps(nextProps){
-    console.log("new car props",this.props.users_vehicle,this.props)
     if(nextProps.users_vehicle!==this.props.users_vehicle){
-      console.log("new car props")
       this.openModal()
     }
   }
 
-  // send mission and user input to imaginary API
+  // send var and user input to imaginary API
   handleModalSubmit(event){
     event.preventDefault()
     const eData = new FormData(event.target) // grat the target
@@ -80,7 +76,6 @@ class SelectCarModal extends React.Component {
   render() {
    let car = ''
    const {make, model, enginePowerPS, enginePowerPW, fuelType, bodyType, engineCapacity} = this.props.users_vehicle
-  console.log("props", this.props.users_vehicle)
     return (
       <div>
         <Modal
@@ -88,7 +83,7 @@ class SelectCarModal extends React.Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
+          contentLabel="Car Modal"
         >
           <button className={"modal-button"} onClick={this.closeModal}>close</button>
           <div className="modal-wrapper">

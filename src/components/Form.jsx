@@ -45,9 +45,6 @@ export class Form extends Component {
 
   render() {
     let carData, selectMake = ''
-    // let x = this.props.car_data ? carData = this.props.car_data : null;
-    // let y = this.props.select_make.length  ? selectMake = this.props.select_make : null;
-    
     let carItems, makeItems = []
     return (
           <div className="form-selection"  data-test="form-selection" >
@@ -97,6 +94,5 @@ const mapDispatchToProps = {
     onVehicleApiRequest: vehicleApiRequest,
     onShowError: showErrorDatabase
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
